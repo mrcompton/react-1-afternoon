@@ -16,8 +16,9 @@ class FilterString extends Component {
     }
 
     filterArray(userInput){
-        var newArr = this.state.unfilteredArray.filter((element)=>(element.includes(userInput)))
-        this.setState({filteredArray: newArr})
+        var newArr = this.state.unfilteredArray.slice()
+        var filtArr = newArr.filter((element)=>(element.includes(userInput)))
+        this.setState({filteredArray: filtArr})
     }
     render() {
         return (
